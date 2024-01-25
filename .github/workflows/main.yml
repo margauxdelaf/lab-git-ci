@@ -4,7 +4,7 @@
   with: 
     java-version: '8'
     distribution: 'adopt'
-	
+
 # Compile notre application
 - name: Build with Maven
   run: mvn --batch-mode --update-snapshots package
@@ -15,7 +15,7 @@
   if: always()
   with:
     files: target/**/*.xml
- 
+
 # Publie les fichiers présents dans le dossier target dans un build artifact
 - name: Upload a Build Artifact
   uses: actions/upload-artifact@v2.2.4
